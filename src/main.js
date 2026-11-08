@@ -6,7 +6,7 @@ import { PREP_TIME } from './js/menu.js';
 const form = document.querySelector('.form');
 const list = document.querySelector('.order-log');
 
-const makeOrder = ({ delay, shouldResolve = true }) => {
+const makeOrder = (delay, shouldResolve = true) => {
     return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
 
   const row = addOrderRow(drink);
 
-  makeOrder({ delay, shouldResolve })
+  makeOrder(delay, shouldResolve)
     .then((delay) => {
       row.classList.remove("row-pending");
       row.classList.add("row-ok");
